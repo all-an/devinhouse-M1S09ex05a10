@@ -49,7 +49,7 @@ cd devinhouse-M1S09ex05a10
 #### Abrir com Spring Tools Suite 4
 #### Rodar como aplicação Spring Boot
 
-### Exercício 05
+## Exercício 05
 
 - [x] Crie um Projeto Spring Framework que tenha uma entidade "Cliente". 
 O programa deve ser capaz de:
@@ -62,18 +62,18 @@ O programa deve ser capaz de:
 
 - [x] O Cliente precisa ter um nome e o CPF e o serviço de validação do CPF antes de criar um novo cliente.
 
-### Exercício 06
+## Exercício 06
 
-- [ ] No Projeto Spring Framework, adicione uma entidade !Conta! . 
+- [x] No Projeto Spring Framework, adicione uma entidade !Conta! . 
 O programa deve ser capaz de:
 
 - [ ] Criar um novo objeto Conta 
-- [ ] Pesquisar todos os objetos Conta 
+- [x] Pesquisar todos os objetos Conta 
 - [ ] Deletar um objeto Conta específico com base no seu ID
 - [ ] Alterar um objeto Conta com base no seu ID
 - [ ] Pesquisar um objeto Conta com base no seu ID
 
-[ ] A Conta deve ter um cliente vinculado a ela e ser criada com um valor zerado.
-[ ] Deve ser possível realizar depósitos e saques de valores de uma Conta, porém o valor na Conta nunca pode ficar negativo.
+- [x] A Conta deve ter um cliente vinculado a ela e ser criada com um valor zerado.
+- [ ] Deve ser possível realizar depósitos e saques de valores de uma Conta, porém o valor na Conta nunca pode ficar negativo.
 
 
