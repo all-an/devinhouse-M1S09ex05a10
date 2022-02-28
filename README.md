@@ -64,6 +64,16 @@ O programa deve ser capaz de:
 
 ### Exercício 06
 
+- [ ] No Projeto Spring Framework, adicione uma entidade !Conta! . 
+O programa deve ser capaz de:
 
+- [ ] Criar um novo objeto Conta 
+- [ ] Pesquisar todos os objetos Conta 
+- [ ] Deletar um objeto Conta específico com base no seu ID
+- [ ] Alterar um objeto Conta com base no seu ID
+- [ ] Pesquisar um objeto Conta com base no seu ID
+
+[ ] A Conta deve ter um cliente vinculado a ela e ser criada com um valor zerado.
+[ ] Deve ser possível realizar depósitos e saques de valores de uma Conta, porém o valor na Conta nunca pode ficar negativo.
 
 
