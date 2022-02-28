@@ -52,6 +52,17 @@ public class Conta implements Serializable {
 		this.cliente = cliente;
 	}
 
+
+	public Double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+	
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,13 +88,5 @@ public class Conta implements Serializable {
 		return true;
 	}
 
-	public Double getSaldo() {
-		return saldo;
-	}
-
-	public void setSaldo(Double saldo) {
-		this.saldo = saldo;
-	}
-	
 	
 }

@@ -56,7 +56,13 @@ public class Cliente implements Serializable {
 		this.name = name;
 	}
 
-	
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 	
 	public List<Conta> getContas() {
 		return contas;
