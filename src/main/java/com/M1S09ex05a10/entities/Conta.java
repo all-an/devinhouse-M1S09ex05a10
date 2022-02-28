@@ -1,43 +1,38 @@
 package com.M1S09ex05a10.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.validator.constraints.br.CPF;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "tb_cliente")
-public class Cliente implements Serializable {
+@Table(name = "tb_conta")
+public class Conta implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
 
-	@CPF(message="cpf inválido")
-	private String cpf;
-
-	@JsonIgnore
-	@OneToMany(mappedBy = "cliente")
-	private List<Conta> contas = new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
 	
-	public Cliente() {
+	private Double saldo;
+
+	public Conta() {
 	}
 
-	public Cliente(Long id, String name, String cpf) {
+	public Conta(Long id, Cliente cliente) {
+		super();
 		this.id = id;
-		this.name = name;
-		this.cpf = cpf;
+		this.cliente = cliente;
+		this.saldo = 0.0;
 	}
 
 	public Long getId() {
@@ -48,18 +43,13 @@ public class Cliente implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+
+	public Cliente getClient() {
+		return cliente;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	
-	
-	public List<Conta> getContas() {
-		return contas;
+	public void setClient(Cliente cliente) {
+		this.cliente = cliente;
 	}
 
 	@Override
@@ -78,7 +68,7 @@ public class Cliente implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Cliente other = (Cliente) obj;
+		Conta other = (Conta) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -86,4 +76,14 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
+
+	public Double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(Double saldo) {
+		this.saldo = saldo;
+	}
+	
+	
 }
