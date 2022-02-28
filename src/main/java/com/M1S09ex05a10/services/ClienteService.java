@@ -8,12 +8,14 @@ import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.stereotype.Service;
 
 import com.M1S09ex05a10.entities.Cliente;
 import com.M1S09ex05a10.exceptions.DatabaseException;
 import com.M1S09ex05a10.exceptions.ResourceNotFoundException;
 import com.M1S09ex05a10.repositories.ClienteRepository;
 
+@Service
 public class ClienteService {
 
 	@Autowired
