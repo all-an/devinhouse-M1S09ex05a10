@@ -24,6 +24,10 @@ public class Conta implements Serializable {
 	private Cliente cliente;
 	
 	private Double saldo;
+	
+	private String mensagem;
+	
+	private Double valorOperacao;
 
 	public Conta() {
 	}
@@ -33,6 +37,8 @@ public class Conta implements Serializable {
 		this.id = id;
 		this.cliente = cliente;
 		this.saldo = 0.0;
+		this.mensagem = "Conta criada";
+		this.valorOperacao = 0.0;
 	}
 
 	public Long getId() {
@@ -61,6 +67,21 @@ public class Conta implements Serializable {
 		this.saldo = saldo;
 	}
 	
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
+	
+	public Double getValorOperacao() {
+		return valorOperacao;
+	}
+
+	public void setValorOperacao(Double valorOperacao) {
+		this.valorOperacao = valorOperacao;
+	}
 	
 	
 	@Override
@@ -87,6 +108,7 @@ public class Conta implements Serializable {
 			return false;
 		return true;
 	}
+
 
 	
 }

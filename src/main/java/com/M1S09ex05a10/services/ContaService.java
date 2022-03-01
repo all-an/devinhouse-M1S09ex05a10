@@ -55,6 +55,29 @@ public class ContaService {
 			throw new ResourceNotFoundException(id); //404Not Found
 		}	
 	}
+	
+	public Conta deposito(Long id, Conta obj) {
+		try {
+			Conta entity = repository.getById(id);
+			Double valorDeposito = obj.getValorOperacao();
+			entity.setSaldo(entity.getSaldo() + valorDeposito);
+			entity.setMensagem("Depósito Realizado!");
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) { 
+			throw new ResourceNotFoundException(id); //404Not Found
+		}	
+	}
+	
+	public Conta saque(Long id, Conta obj) {
+		try {
+			Conta entity = repository.getById(id);
+			
+			updateData(entity, obj.getCliente(), obj);
+			return repository.save(entity);
+		} catch (EntityNotFoundException e) { 
+			throw new ResourceNotFoundException(id); //404Not Found
+		}	
+	}
 
 	private void updateData(Conta anterior, Cliente obj, Conta novosDados) {
 		anterior.setSaldo(novosDados.getSaldo());

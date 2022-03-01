@@ -56,4 +56,16 @@ public class ContaResource {
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);
 	}
+	
+	@PutMapping(value = "/deposito/{id}")
+	public ResponseEntity<Conta> deposito(@PathVariable Long id, @RequestBody Conta obj) {
+		obj = service.deposito(id, obj);
+		return ResponseEntity.ok().body(obj);
+	}
+	
+	@PutMapping(value = "/saque/{id}")
+	public ResponseEntity<Conta> saque(@PathVariable Long id, @RequestBody Conta obj) {
+		obj = service.update(id, obj);
+		return ResponseEntity.ok().body(obj);
+	}
 }

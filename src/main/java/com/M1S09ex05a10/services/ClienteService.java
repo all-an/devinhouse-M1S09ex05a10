@@ -55,7 +55,7 @@ public class ClienteService {
 	}
 
 	private void updateData(Cliente entity, Cliente obj) {
-		entity.setName(obj.getName());
+		entity.setNome(obj.getNome());
 		entity.setCpf(obj.getCpf());
 	}
 }

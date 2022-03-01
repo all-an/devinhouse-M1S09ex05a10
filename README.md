@@ -89,6 +89,15 @@ POST
 - [x] Pesquisar um objeto Conta com base no seu ID
 
 - [x] A Conta deve ter um cliente vinculado a ela e ser criada com um valor zerado.
-- [ ] Deve ser possível realizar depósitos e saques de valores de uma Conta, porém o valor na Conta nunca pode ficar negativo.
+- [x] Deve ser possível realizar depósitos e saques de valores de uma Conta, porém o valor na Conta nunca pode ficar negativo.
+
+/contas/deposito/{id}
+/contas/saque/{id}
+```json
+{
+    "id": 1,
+    "valorOperacao": 500.0
+}
+```
 
 
