@@ -44,11 +44,11 @@ public class Conta implements Serializable {
 	}
 
 
-	public Cliente getClient() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setClient(Cliente cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
