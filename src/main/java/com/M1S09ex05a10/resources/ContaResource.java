@@ -65,7 +65,7 @@ public class ContaResource {
 	
 	@PutMapping(value = "/saque/{id}")
 	public ResponseEntity<Conta> saque(@PathVariable Long id, @RequestBody Conta obj) {
-		obj = service.update(id, obj);
+		obj = service.saque(id, obj);
 		return ResponseEntity.ok().body(obj);
 	}
 }

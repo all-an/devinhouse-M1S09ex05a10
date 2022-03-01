@@ -60,8 +60,14 @@ public class ContaService {
 		try {
 			Conta entity = repository.getById(id);
 			Double valorDeposito = obj.getValorOperacao();
-			entity.setSaldo(entity.getSaldo() + valorDeposito);
-			entity.setMensagem("Depósito Realizado!");
+			entity.setValorOperacao(obj.getValorOperacao());
+			if(valorDeposito > 0.0) {
+				entity.setSaldo(entity.getSaldo() + valorDeposito);
+				entity.setValorOperacao(obj.getValorOperacao());
+				entity.setMensagem("Depósito Realizado!");				
+			}else {
+				entity.setMensagem("Depósito negativo?!");
+			}
 			return repository.save(entity);
 		} catch (EntityNotFoundException e) { 
 			throw new ResourceNotFoundException(id); //404Not Found
@@ -71,8 +77,14 @@ public class ContaService {
 	public Conta saque(Long id, Conta obj) {
 		try {
 			Conta entity = repository.getById(id);
-			
-			updateData(entity, obj.getCliente(), obj);
+			Double valorSaque = obj.getValorOperacao();
+			entity.setValorOperacao(obj.getValorOperacao());
+			if(entity.getSaldo() <= 0 || valorSaque > entity.getSaldo())
+				entity.setMensagem("Saldo Insuficiente!");
+			else {
+				entity.setSaldo(entity.getSaldo() - valorSaque);
+				entity.setMensagem("Saque Realizado!");
+			}
 			return repository.save(entity);
 		} catch (EntityNotFoundException e) { 
 			throw new ResourceNotFoundException(id); //404Not Found
