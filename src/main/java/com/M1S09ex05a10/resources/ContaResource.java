@@ -1,6 +1,7 @@
 package com.M1S09ex05a10.resources;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,13 @@ public class ContaResource {
 	public ResponseEntity<Conta> saque(@PathVariable Long id, @RequestBody Conta obj) {
 		obj = service.saque(id, obj);
 		return ResponseEntity.ok().body(obj);
+	}
+	
+	@PutMapping(value = "/transfere/{id}")
+	public ResponseEntity<List<Conta>> transfere(@PathVariable Long id, @RequestBody List<Conta> origemDestino ) {
+		List<Conta> contas = new ArrayList<>();
+		contas.add(service.saque(origemDestino.get(0).getId(), origemDestino.get(0)));
+		contas.add(service.deposito(origemDestino.get(1).getId(), origemDestino.get(0)));
+		return ResponseEntity.ok().body(contas);
 	}
 }

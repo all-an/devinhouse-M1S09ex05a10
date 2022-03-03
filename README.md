@@ -100,4 +100,24 @@ POST
 }
 ```
 
+- [x] Exercício 7
+
+Com base no programa criado com o  Spring Framework, crie um programa Spring Boot que nos permita realizar o cadastro e a consulta das entidades "Conta" e "Cliente". 
+Essas funcionalidades devem ser feitas por meio de requisições HTTP:
+
+- As requisições devem ser POST para cadastro e GET para consulta.
+- As requisições devem ser feitas nos endpoints /cliente e no /conta.
+- As requisições devem ser no padrão JSON.
+
+- [x] Exercício 8
+
+Agora expandindo as funcionalidades do programa anterior, devemos ser capazes de realizar todas as operações CRUD(Create, Read, Update, Delete) tanto para a "Conta" quanto para o "Cliente".
+
+- Os endpoints devem ser os mesmos
+- A operação de Update deve ser feita por meio do PUT e deve usar o ID da entidade em questão, seja ela Cliente ou Conta.
+- A operação de Delete deve ser feita por meio do Delete, e deve também usar o ID da entidade em questão.
+
+
+
+
 
